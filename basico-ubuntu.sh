@@ -81,6 +81,9 @@ sudo mkdir -p /var/www/html/app1 /var/www/html/app2
 printf "<h1>Sitio Aplicacion #1</h1>" | sudo tee /var/www/html/app1/index.html
 printf "<h1>Sitio Aplicacion #2</h1>" | sudo tee /var/www/html/app2/index.html
 
+# Reiniciando el java en caso de fallo
+source "/home/ubuntu/.sdkman/bin/sdkman-init.sh"
+
 # Clonando el proyecto ORM y moviendo a la carpeta descargada.
 cd ~/
 git clone https://github.com/vacax/orm-jpa
