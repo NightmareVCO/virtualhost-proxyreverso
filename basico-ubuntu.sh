@@ -47,3 +47,16 @@ cd orm-jpa
 
 # Subiendo la aplicación puerto por defecto.
 java -jar ~/orm-jpa/build/libs/app.jar > ~/orm-jpa/build/libs/salida.txt 2> ~/orm-jpa/build/libs/error.txt &
+
+# Clonando el proyecto #2 y moviendo a la carpeta descargada
+cd ~/
+git clone https://github.com/NightmareVCO/practicas-icc-352.git
+cd practicas-icc-352/pratica-4/
+
+# Ejectuando la creacion de fatjar
+./gradlew shawdojar
+
+# Subiendo la apliacacion a puerto designado
+java -jar ~/practicas-icc-352/pratica-4/build/libs/app.jar > ~/practicas-icc-352/pratica-4/build/libs/salida.txt 2> ~/practicas-icc-352/pratica-4/build/libs/error.txt &
+
+
