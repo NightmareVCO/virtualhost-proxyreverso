@@ -44,20 +44,21 @@ sudo sed -i "s/ServerName CAMBIAR2/ServerName $server_name2/g" virtualhost.conf
 sudo sed -i "s/ServerName CAMBIAR/ServerName $server_name1/g" proxyreverso.conf
 
 # Cambiando el seguro
-sudo sed -i "s/ServerName CAMBIAR/$server_name1/g" seguro.conf
-
+# vhost #1
+sudo sed -i "s/ServerName CAMBIAR1/ServerName $server_name1/g" seguro.conf
 # Actualizar redirección HTTP
 sudo sed -i "s/Redirect 301 \/ https:\/\/CAMBIAR1\//Redirect 301 \/ https:\/\/$server_name1\//g" seguro.conf
 # Actualizar el bloque de configuración de SSL
-sudo sed -i "s/servername CAMBIAR1/servername $server_name1/g" seguro.conf
+sudo sed -i "s/ServerName CAMBIAR1/ServerName $server_name1/g" seguro.conf
 sudo sed -i "s/SSLCertificateFile \/etc\/letsencrypt\/live\/CAMBIAR1\/cert.pem/SSLCertificateFile \/etc\/letsencrypt\/live\/$server_name1\/cert.pem/g" seguro.conf
 sudo sed -i "s/SSLCertificateKeyFile \/etc\/letsencrypt\/live\/CAMBIAR1\/privkey.pem/SSLCertificateKeyFile \/etc\/letsencrypt\/live\/$server_name1\/privkey.pem/g" seguro.conf
 sudo sed -i "s/SSLCertificateChainFile \/etc\/letsencrypt\/live\/CAMBIAR1\/chain.pem/SSLCertificateChainFile \/etc\/letsencrypt\/live\/$server_name1\/chain.pem/g" seguro.conf
-
+# vhost #2
+sudo sed -i "s/ServerName CAMBIAR1/ServerName $server_name1/g" seguro.conf
 # Actualizar redirección HTTP
 sudo sed -i "s/Redirect 301 \/ https:\/\/CAMBIAR2\//Redirect 301 \/ https:\/\/$server_name2\//g" seguro.conf
 # Actualizar el bloque de configuración de SSL
-sudo sed -i "s/servername CAMBIAR2/servername $server_name2/g" seguro.conf
+sudo sed -i "s/servername CAMBIAR2/ServerName $server_name2/g" seguro.conf
 sudo sed -i "s/SSLCertificateFile \/etc\/letsencrypt\/live\/CAMBIAR2\/cert.pem/SSLCertificateFile \/etc\/letsencrypt\/live\/$server_name2\/cert.pem/g" seguro.conf
 sudo sed -i "s/SSLCertificateKeyFile \/etc\/letsencrypt\/live\/CAMBIAR2\/privkey.pem/SSLCertificateKeyFile \/etc\/letsencrypt\/live\/$server_name2\/privkey.pem/g" seguro.conf
 sudo sed -i "s/SSLCertificateChainFile \/etc\/letsencrypt\/live\/CAMBIAR2\/chain.pem/SSLCertificateChainFile \/etc\/letsencrypt\/live\/$server_name2\/chain.pem/g" seguro.conf
