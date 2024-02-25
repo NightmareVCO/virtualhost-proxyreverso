@@ -98,7 +98,7 @@ git clone https://github.com/NightmareVCO/p4-publica.git
 cd p4-publica
 
 # Ejectuando la creacion de fatjar
-./gradlew shawdojar
+./gradlew shadowjar
 
 # Subiendo la apliacacion a puerto designado
 java -jar ~/p4-publica/build/libs/app.jar > ~/p4-publica/build/libs/salida.txt 2> ~/p4-publica/build/libs/error.txt &
