@@ -102,4 +102,4 @@ cd p4-publica
 # Subiendo la apliacacion a puerto designado
 java -jar ~/p4-publica/build/libs/app.jar > ~/p4-publica/build/libs/salida.txt 2> ~/p4-publica/build/libs/error.txt &
 
-
+cd /etc/apache2/sites-available
