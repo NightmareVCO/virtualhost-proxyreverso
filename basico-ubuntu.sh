@@ -23,7 +23,7 @@ sdk install java 17.0.9-tem
 sudo service apache2 start
 
 # Clonando el repositorio.
-git clone https://github.com/vacax/virtualhost-proxyreverso
+git clone https://github.com/NightmareVCO/virtualhost-proxyreverso.git
 
 # Copiando los archivos de configuración en la ruta indicada.
 sudo cp ~/virtualhost-proxyreverso/configuraciones/virtualhost.conf /etc/apache2/sites-available/
