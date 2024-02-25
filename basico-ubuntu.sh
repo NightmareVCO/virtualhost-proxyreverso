@@ -37,30 +37,30 @@ read -p "Ingrese el nombre del host #2: " server_name2
 read -p "Ingrese su correo: " correo
 
 # Cambiando el virtualhost
-sed -i "s/ServerName CAMBIAR1/ServerName $server_name1/g" virtualhost.conf
-sed -i "s/ServerName CAMBIAR2/ServerName $server_name2/g" virtualhost.conf
+sudo sed -i "s/ServerName CAMBIAR1/ServerName $server_name1/g" virtualhost.conf
+sudo sed -i "s/ServerName CAMBIAR2/ServerName $server_name2/g" virtualhost.conf
 
 # Cambiando el proxyreverso
-sed -i "s/ServerName CAMBIAR/ServerName $server_name1/g" proxyreverso.conf
+sudo sed -i "s/ServerName CAMBIAR/ServerName $server_name1/g" proxyreverso.conf
 
 # Cambiando el seguro
-sed -i "s/ServerName CAMBIAR/$server_name1/g" seguro.conf
+sudo sed -i "s/ServerName CAMBIAR/$server_name1/g" seguro.conf
 
 # Actualizar redirección HTTP
-sed -i "s/Redirect 301 \/ https:\/\/CAMBIAR1\//Redirect 301 \/ https:\/\/$server_name1\//g" seguro.conf
+sudo sed -i "s/Redirect 301 \/ https:\/\/CAMBIAR1\//Redirect 301 \/ https:\/\/$server_name1\//g" seguro.conf
 # Actualizar el bloque de configuración de SSL
-sed -i "s/servername CAMBIAR1/servername $server_name1/g" seguro.conf
-sed -i "s/SSLCertificateFile \/etc\/letsencrypt\/live\/CAMBIAR1\/cert.pem/SSLCertificateFile \/etc\/letsencrypt\/live\/$server_name1\/cert.pem/g" seguro.conf
-sed -i "s/SSLCertificateKeyFile \/etc\/letsencrypt\/live\/CAMBIAR1\/privkey.pem/SSLCertificateKeyFile \/etc\/letsencrypt\/live\/$server_name1\/privkey.pem/g" seguro.conf
-sed -i "s/SSLCertificateChainFile \/etc\/letsencrypt\/live\/CAMBIAR1\/chain.pem/SSLCertificateChainFile \/etc\/letsencrypt\/live\/$server_name1\/chain.pem/g" seguro.conf
+sudo sed -i "s/servername CAMBIAR1/servername $server_name1/g" seguro.conf
+sudo sed -i "s/SSLCertificateFile \/etc\/letsencrypt\/live\/CAMBIAR1\/cert.pem/SSLCertificateFile \/etc\/letsencrypt\/live\/$server_name1\/cert.pem/g" seguro.conf
+sudo sed -i "s/SSLCertificateKeyFile \/etc\/letsencrypt\/live\/CAMBIAR1\/privkey.pem/SSLCertificateKeyFile \/etc\/letsencrypt\/live\/$server_name1\/privkey.pem/g" seguro.conf
+sudo sed -i "s/SSLCertificateChainFile \/etc\/letsencrypt\/live\/CAMBIAR1\/chain.pem/SSLCertificateChainFile \/etc\/letsencrypt\/live\/$server_name1\/chain.pem/g" seguro.conf
 
 # Actualizar redirección HTTP
-sed -i "s/Redirect 301 \/ https:\/\/CAMBIAR2\//Redirect 301 \/ https:\/\/$server_name2\//g" seguro.conf
+sudo sed -i "s/Redirect 301 \/ https:\/\/CAMBIAR2\//Redirect 301 \/ https:\/\/$server_name2\//g" seguro.conf
 # Actualizar el bloque de configuración de SSL
-sed -i "s/servername CAMBIAR2/servername $server_name2/g" seguro.conf
-sed -i "s/SSLCertificateFile \/etc\/letsencrypt\/live\/CAMBIAR2\/cert.pem/SSLCertificateFile \/etc\/letsencrypt\/live\/$server_name2\/cert.pem/g" seguro.conf
-sed -i "s/SSLCertificateKeyFile \/etc\/letsencrypt\/live\/CAMBIAR2\/privkey.pem/SSLCertificateKeyFile \/etc\/letsencrypt\/live\/$server_name2\/privkey.pem/g" seguro.conf
-sed -i "s/SSLCertificateChainFile \/etc\/letsencrypt\/live\/CAMBIAR2\/chain.pem/SSLCertificateChainFile \/etc\/letsencrypt\/live\/$server_name2\/chain.pem/g" seguro.conf
+sudo sed -i "s/servername CAMBIAR2/servername $server_name2/g" seguro.conf
+sudo sed -i "s/SSLCertificateFile \/etc\/letsencrypt\/live\/CAMBIAR2\/cert.pem/SSLCertificateFile \/etc\/letsencrypt\/live\/$server_name2\/cert.pem/g" seguro.conf
+sudo sed -i "s/SSLCertificateKeyFile \/etc\/letsencrypt\/live\/CAMBIAR2\/privkey.pem/SSLCertificateKeyFile \/etc\/letsencrypt\/live\/$server_name2\/privkey.pem/g" seguro.conf
+sudo sed -i "s/SSLCertificateChainFile \/etc\/letsencrypt\/live\/CAMBIAR2\/chain.pem/SSLCertificateChainFile \/etc\/letsencrypt\/live\/$server_name2\/chain.pem/g" seguro.conf
 
 # Configuracion de apache2
 sudo a2enmod proxy proxy_html proxy_http ssl
@@ -93,13 +93,13 @@ java -jar ~/orm-jpa/build/libs/app.jar > ~/orm-jpa/build/libs/salida.txt 2> ~/or
 
 # Clonando el proyecto #2 y moviendo a la carpeta descargada
 cd ~/
-git clone https://github.com/NightmareVCO/practicas-icc-352.git
-cd practicas-icc-352/pratica-4/
+git clone https://github.com/NightmareVCO/p4-publica.git
+cd p4-publica
 
 # Ejectuando la creacion de fatjar
 ./gradlew shawdojar
 
 # Subiendo la apliacacion a puerto designado
-java -jar ~/practicas-icc-352/pratica-4/build/libs/app.jar > ~/practicas-icc-352/pratica-4/build/libs/salida.txt 2> ~/practicas-icc-352/pratica-4/build/libs/error.txt &
+java -jar ~/p4-publica/build/libs/app.jar > ~/p4-publica/build/libs/salida.txt 2> ~/p4-publica/build/libs/error.txt &
 
 
