@@ -106,4 +106,9 @@ cd p4-publica
 # Subiendo la apliacacion a puerto designado
 java -jar ~/p4-publica/build/libs/app.jar > ~/p4-publica/build/libs/salida.txt 2> ~/p4-publica/build/libs/error.txt &
 
+# Reinicar apache
+sudo systemctl restart apache2
+
 cd /etc/apache2/sites-available
+
+
