@@ -29,6 +29,7 @@ git clone https://github.com/NightmareVCO/virtualhost-proxyreverso.git
 sudo cp ~/virtualhost-proxyreverso/configuraciones/virtualhost.conf /etc/apache2/sites-available/
 sudo cp ~/virtualhost-proxyreverso/configuraciones/seguro.conf /etc/apache2/sites-available/
 sudo cp ~/virtualhost-proxyreverso/configuraciones/proxyreverso.conf /etc/apache2/sites-available/
+sudo cp ~/virtualhost-proxyreverso/configuraciones/urlshortener.conf /etc/apache2/sites-available/
 
 # Ingresando los nombres de los servidores de manera dinamica
 cd /etc/apache2/sites-available/
