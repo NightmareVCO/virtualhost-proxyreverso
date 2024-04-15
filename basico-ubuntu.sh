@@ -97,14 +97,14 @@ java -jar ~/orm-jpa/build/libs/app.jar > ~/orm-jpa/build/libs/salida.txt 2> ~/or
 
 # Clonando el proyecto #2 y moviendo a la carpeta descargada
 cd ~/
-git clone https://github.com/NightmareVCO/parcial-2.git
-cd parcial-2
+git clone https://github.com/NightmareVCO/urlShortenerJava
+cd urlShortenerJava
 
 # Ejectuando la creacion de fatjar
 ./gradlew shadowjar
 
 # Subiendo la apliacacion a puerto designado
-java -jar ~/parcial-2/build/libs/app.jar > ~/parcial-2/build/libs/salida.txt 2> ~/parcial-2/build/libs/error.txt &
+java -jar ~/urlShortenerJava/build/libs/app.jar > ~/urlShortenerJava/build/libs/salida.txt 2> ~/urlShortenerJava/build/libs/error.txt &
 
 # Reinicar apache
 sudo systemctl restart apache2
